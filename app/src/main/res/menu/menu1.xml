@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/Fragment1"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Mi cuenta" />
+
+        <item android:id="@+id/Fragment2"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Agregar Servicio" />
+        <item android:id="@+id/Fragment3"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="Mis publicaciones" />
+        <item android:id="@+id/Fragment4"
+            android:icon="@android:drawable/ic_menu_gallery"
+            android:title="PEndientes" />
+    </group>
+    <item android:title="Acciones adicionales">
+        <menu>
+            <item android:id="@+id/nav_compartir"
+                android:icon="@android:drawable/ic_menu_share"
+                android:title="Compartir" />
+            <item android:id="@+id/nav_salir"
+                android:icon="@android:drawable/ic_menu_manage"
+                android:title="Salir" />
+        </menu>
+    </item>
+</menu>
