@@ -49,8 +49,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_salir:
                 finish();
                 break;
-            default:
+            case R.id.MiCuenta:
+                startActivity(new Intent(this,MiPerfilActivity.class));
                 break;
+
+            case R.id.MisPendientes:
+                startActivity(new Intent(this,PendientesActivity.class));
+                break;
+
+                default:
+                    break;
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(
                 R.id.drawer_layout);
