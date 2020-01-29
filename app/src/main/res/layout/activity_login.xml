@@ -1,9 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/login"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <!-- Image Top-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- color-background -->
+    <ImageView
+        android:id="@+id/easy_servic"
+        android:layout_width="191dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="113dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/logo_nombre" />
+
+    <View
+        android:id="@+id/background_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-24dp"
+        android:background="@drawable/background_color" />
+
+    <!-- Texto Usuario-->
+
+    <!-- Texto Password -->
+    <EditText
+        android:id="@+id/txtuser"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="263dp"
+        android:background="@drawable/textuser"
+        android:elevation="20dp"
+        android:gravity="center"
+        android:hint="@string/txtuser" />
+
+    <EditText
+        android:id="@+id/txtpassword"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="330dp"
+        android:background="@drawable/textuser"
+        android:hint="@string/txtpassword"
+        android:gravity="center"
+        android:elevation="20dp" />
+
+    <Button
+        android:id="@+id/btningresar"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="400dp"
+        android:background="@drawable/borde_redondo"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:textSize="56px"
+        android:textColor="@color/Blanco"
+        android:text="@string/login_name" />
+
+    <Button
+        android:id="@+id/btncliente"
+        android:layout_width="330dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="49dp"
+        android:layout_marginTop="470dp"
+        android:background="@drawable/borde_redondo_invitado"
+        android:elevation="15dp"
+        android:gravity="center"
+        android:textSize="56px"
+        android:textColor="@color/Azul"
+        android:text="@string/ingreso_cliente" />
+
+
+    <TextView
+        android:id="@+id/lbl_nocuent"
+        android:layout_width="131dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="92dp"
+        android:layout_marginTop="544dp"
+        android:gravity="top"
+        android:text="¿No tiene cuenta?"
+        android:textAppearance="@style/nocuenta" />
+
+    <Button
+        android:id="@+id/registrese"
+        android:layout_width="92dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="231dp"
+        android:layout_marginTop="540dp"
+        android:gravity="center"
+        android:text="@string/registrese"
+        android:textAppearance="@style/registrese"
+        android:background="@color/Amarillo"/>
+
+</RelativeLayout>

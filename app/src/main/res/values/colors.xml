@@ -5,4 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="colorwhite">#ffffff</color>
 
+    <color name="Blanco">#F2F2F2</color>
+    <color name="Negro">#000000</color>
+    <color name="Amarillo">#F4A52F</color>
+    <color name="Azul">#29178B</color>
+
 </resources>
