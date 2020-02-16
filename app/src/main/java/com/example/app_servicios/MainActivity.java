@@ -44,13 +44,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 paramView.setType("text/plain");
                 paramView.putExtra("android.intent.extra.TEXT", "Descarga nuestra app de la PlayStore" +
                         " \n" + "https://play.google.com/store/apps/details?id=app.product.demarktec.alo14_pasajero");
-                startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo"));
+                startActivity(Intent.createChooser(paramView, "Comparte Nuestro aplicativo EASY SERVICE"));
                 break;
             case R.id.nav_salir:
                 finish();
                 break;
             case R.id.MiCuenta:
                 startActivity(new Intent(this,MiPerfilActivity.class));
+                break;
+
+            case R.id.CrearServicio:
+                startActivity(new Intent(this,Crear_Servicio.class));
                 break;
 
             case R.id.MisPendientes:

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/fondo3"
+    android:layout_marginBottom="0dp"
+    android:layout_marginTop="0dp"
+    android:layout_height="match_parent"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp">
+
+        <ImageView
+            android:layout_width="217dp"
+            android:layout_height="149dp"
+            android:maxWidth="150dp"
+            android:maxHeight="150dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/logo_s_f"></ImageView>
+
+        <TextView
+            android:id="@+id/t_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:layout_marginTop="180dp"
+            android:textStyle="bold"
+            android:textColor="@color/primary_text"
+            android:textSize="25sp"
+            android:text="CREAR SERVICIO" />
+        <TextView
+            android:id="@+id/t_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titulo del servicio:"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:layout_marginTop="240dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t_nombre"
+            android:hint="Nombre del servicio" >
+            <requestFocus/>
+        </EditText>
+        <TextView
+            android:id="@+id/t_descripcion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nombre"
+            android:text="Descripcion del servicio:"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <EditText
+            android:id="@+id/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t_descripcion"
+            android:hint="Descripcion del servicio" >
+            <requestFocus/>
+        </EditText>
+        <TextView
+            android:id="@+id/t_precio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descripcion"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:text="Precio del servicio:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <EditText
+            android:id="@+id/precio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t_precio"
+            android:hint="Precio" >
+            <requestFocus/>
+        </EditText>
+
+        <TextView
+            android:id="@+id/t_direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/precio"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:text="Ubicacion:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <Spinner
+            android:id="@+id/direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/ubicacion"
+            android:layout_alignTop="@id/t_direccion"
+            android:layout_below="@id/precio"
+            android:layout_toRightOf="@id/t_direccion" />
+
+        <TextView
+            android:id="@+id/t_categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/direccion"
+            android:textColor="@color/primary_text"
+            android:textStyle="bold"
+            android:text="Categoria:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <Spinner
+            android:id="@+id/categoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/categoria"
+            android:layout_alignTop="@id/t_categoria"
+            android:layout_below="@id/direccion"
+            android:layout_toRightOf="@id/t_direccion" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t_categoria"
+            android:layout_marginTop="23dp"
+            android:layout_marginLeft="110dp"
+            android:layout_marginBottom="20dp"
+            android:foregroundGravity="center"
+            android:gravity="center"
+            android:onClick="Insertar"
+            android:textColor="@color/primary_text"
+            android:textSize="25sp"
+            android:background="@color/Amarillo"
+            android:text="CREAR SERVICIO" />
+    </RelativeLayout>
+</androidx.core.widget.NestedScrollView>

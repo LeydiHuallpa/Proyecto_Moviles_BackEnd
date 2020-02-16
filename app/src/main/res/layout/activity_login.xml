@@ -69,6 +69,7 @@
         android:gravity="center"
         android:textSize="56px"
         android:textColor="@color/Blanco"
+        android:onClick="Ingresar"
         android:text="@string/login_name" />
 
     <Button

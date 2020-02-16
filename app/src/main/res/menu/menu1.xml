@@ -2,15 +2,15 @@
     <group android:checkableBehavior="single">
         <item android:id="@+id/MiCuenta"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Mi cuenta" />
+            android:title="Mi Perfil" />
 
-        <item android:id="@+id/Fragment2"
+        <item android:id="@+id/CrearServicio"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Agregar Servicio" />
+            android:title="Crear Servicio" />
 
-        <item android:id="@+id/Fragment3"
+        <item android:id="@+id/MisServicios"
             android:icon="@android:drawable/ic_menu_gallery"
-            android:title="Mis publicaciones" />
+            android:title="Mis Servicios" />
 
         <item android:id="@+id/MisPendientes"
             android:icon="@android:drawable/ic_menu_gallery"

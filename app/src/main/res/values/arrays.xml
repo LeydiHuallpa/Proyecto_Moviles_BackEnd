@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ubicacion">
+        <item>Seleccione su Ubicacion</item>
+        <item>Selecionar sitio en mapa</item>
+    </string-array>
+    <string-array name="categoria">
+        <item>Arquitecto (a) </item>
+        <item>Contador (a) </item>
+        <item>Ingerniero(a) de Sistemas </item>
+        <item>Ingerniero(a) Civil </item>
+    </string-array>
+
+</resources>
+
