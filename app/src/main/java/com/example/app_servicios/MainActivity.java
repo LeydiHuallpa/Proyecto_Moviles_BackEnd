@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void inicializarFirebase() {
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        //firebaseDatabase.setPersistenceEnabled(true);
+        //firebaseDatabase.setPersistenceEnabled(true);// agrega de manera local sin internet
         databaseReference = firebaseDatabase.getReference();
     }
 
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     p.setServicio_precio(servicio_precio);
                     p.setServicio_categoria(servicio_categoria);
                     databaseReference.child("Servicio").child(p.getServicio_id()).setValue(p);
-                    Toast.makeText(this, "Agregado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Registro Agregado", Toast.LENGTH_LONG).show();
                     limpiarCajas();
                 }
                 break;
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     p.setServicio_precio(servicio_precio);
                     p.setServicio_categoria(servicio_categoria);
                     databaseReference.child("Servicio").child(p.getServicio_id()).setValue(p);
-                    Toast.makeText(this, "Actualizado", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, "Registro Actualizado", Toast.LENGTH_LONG).show();
                     limpiarCajas();
                 }
                 break;
@@ -195,8 +195,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 Servicio p = new Servicio();
                 p.setServicio_id(servicioSelected.getServicio_id());
-                databaseReference.child("Persona").child(p.getServicio_id()).removeValue();
-                Toast.makeText(this,"Eliminado", Toast.LENGTH_LONG).show();
+                databaseReference.child("Servicio").child(p.getServicio_id()).removeValue();
+                Toast.makeText(this,"Registro Eliminado", Toast.LENGTH_LONG).show();
                 limpiarCajas();
                 break;
             }

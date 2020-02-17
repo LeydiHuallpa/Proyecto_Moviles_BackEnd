@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:fillViewport="true">
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -23,7 +24,7 @@
     <ImageView
         android:layout_width="217dp"
         android:layout_height="149dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="90dp"
         android:maxWidth="150dp"
         android:maxHeight="150dp"
@@ -34,7 +35,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
         android:textColor="@color/primary_text"
         android:textSize="25sp"
@@ -46,7 +47,7 @@
         android:text="Titulo del servicio:"
         android:textColor="@color/primary_text"
         android:textStyle="bold"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <EditText
         android:id="@+id/nombre"
@@ -98,8 +99,9 @@
         android:layout_height="36dp"
         android:layout_below="@id/precio"
         android:text="Seleccionar Ubicación"
+        android:textStyle="bold"
+        android:background="@drawable/fondo5"
         android:onClick="IrAlMapa"/>
-
 
     <TextView
         android:id="@+id/t_categoria"
@@ -121,7 +123,7 @@
 
     <TextView
         android:layout_width="wrap_content"
-        android:textSize="30dp"
+        android:textSize="25sp"
         android:layout_margin="10dp"
         android:textStyle="bold"
         android:textColor="@color/Negro"
