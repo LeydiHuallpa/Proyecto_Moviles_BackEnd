@@ -106,7 +106,8 @@
             android:entries="@array/sexo"
             android:layout_alignTop="@id/t_categoria"
             android:layout_below="@id/t_sexo"
-            android:layout_toRightOf="@id/t_categoria" />
+            android:layout_toRightOf="@id/t_categoria"
+            tools:ignore="NotSibling" />
 
 
         <TextView

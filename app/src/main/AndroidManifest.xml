@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_servicios">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
     <uses-permission android:name="android.permission.CAMERA"></uses-permission>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-    <uses-feature android:name="android.hardware.location.gps" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,14 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCs0HW5Iv2ckH0A1kw3lpQLRFtRDXbBW8k"/>
-        <uses-library
-            android:name="org.apache.http.legacy"
-            android:required="false" />
         <activity android:name=".SeleccionUbicacion"></activity>
-        <activity android:name=".Crear_Servicio" />
         <activity android:name=".MiPerfilActivity" />
         <activity android:name=".PendientesActivity" />
         <activity android:name=".RegisterActivity" />

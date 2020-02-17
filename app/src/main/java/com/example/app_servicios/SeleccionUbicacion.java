@@ -63,7 +63,7 @@ public class SeleccionUbicacion extends AppCompatActivity implements OnMapReadyC
         } else{
             Toast.makeText(this, "no se ha encontrado su ubicación", Toast.LENGTH_SHORT).show();
         }
-        Intent intent = new Intent(SeleccionUbicacion.this,Crear_Servicio.class);
+        Intent intent = new Intent(SeleccionUbicacion.this,MainActivity.class);
         intent.putExtra("latitud",Latitud);
         intent.putExtra("longitud",Longitud);
         startActivity(intent);

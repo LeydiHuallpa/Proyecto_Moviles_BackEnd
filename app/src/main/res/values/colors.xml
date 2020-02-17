@@ -3,8 +3,18 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#FFF7DD</color>
-    <color name="colorwhite">#ffffff</color>
+    <color name="color1">#f2a431</color>
+    <color name="color2">#2c1c88</color>
+    <color name="color3">#ecddfa</color>
+    <color name="color4">#8e80c5</color>
+    <color name="color5">#efc396</color>
+    <color name="color6">#7463ac</color>
+    <color name="color7">#beb2ec</color>
 
+    <color name="overlayBackground">#7f333639</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+
+    <color name="white">#fff</color>
     <color name="Blanco">#F2F2F2</color>
     <color name="Negro">#000000</color>
     <color name="Amarillo">#F4A52F</color>

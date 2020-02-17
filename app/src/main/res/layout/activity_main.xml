@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/fondo3"
+    android:orientation="vertical"
+    android:padding="15dp"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
     <androidx.appcompat.widget.Toolbar
@@ -10,15 +17,122 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:minHeight="?attr/actionBarSize"
-        android:background="#a70909"
+        android:background="@color/color2"
         tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:layout_width="217dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="90dp"
+        android:maxWidth="150dp"
+        android:maxHeight="150dp"
+        android:src="@drawable/logo_s_f"></ImageView>
+
     <TextView
+        android:id="@+id/t_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text"
+        android:textSize="25sp"
+        android:text="CREAR SERVICIO" />
+    <TextView
+        android:id="@+id/t_nombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Titulo del servicio:"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t_nombre"
+        android:hint="Nombre del servicio" >
+        <requestFocus/>
+    </EditText>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/t_descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombre"
+        android:text="Descripcion del servicio:"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/descripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t_descripcion"
+        android:hint="Descripcion del servicio" >
+        <requestFocus/>
+    </EditText>
+    <TextView
+        android:id="@+id/t_precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descripcion"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="Precio del servicio:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/precio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t_precio"
+        android:hint="Precio" >
+        <requestFocus/>
+    </EditText>
+
+    <Button
+        android:id="@+id/btnubicacion"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_below="@id/precio"
+        android:text="Seleccionar Ubicación"
+        android:onClick="IrAlMapa"/>
+
+
+    <TextView
+        android:id="@+id/t_categoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnubicacion"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="Categoria:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <EditText
+        android:id="@+id/categoria"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/t_categoria"
+        android:hint="Escriba la Categoria" >
+        <requestFocus/>
+    </EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:textSize="30dp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/Negro"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Lista de tus Servicios" />
+
+    <ListView
+        android:id="@+id/listV_servicios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>
+</ScrollView>
