@@ -157,14 +157,31 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             case R.id.icon_save:{
+                if (servicio_nombre.equals("")||servicio_descripcion.equals("")||servicio_precio.equals("")||servicio_categoria.equals("")){
+                    validacion();
 
-                Toast.makeText(this,"Guardar", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    Servicio p = new Servicio();
+                    p.setServicio_id(UUID.randomUUID().toString());
+                    p.setServicio_nombre(servicio_nombre);
+                    p.setServicio_descripcion(servicio_descripcion);
+                    p.setServicio_precio(servicio_precio);
+                    p.setServicio_categoria(servicio_categoria);
+                    databaseReference.child("Servicio").child(p.getServicio_id()).setValue(p);
+                    Toast.makeText(this, "Actualizado", Toast.LENGTH_LONG).show();
+                    limpiarCajas();
+                }
                 break;
             }
 
             case R.id.icon_delete:{
 
-                Toast.makeText(this,"Eliminar", Toast.LENGTH_LONG).show();
+                Servicio p = new Servicio();
+                p.setServicio_id(servicioSelected.getServicio_id());
+                databaseReference.child("Persona").child(p.getServicio_id()).removeValue();
+                Toast.makeText(this,"Eliminado", Toast.LENGTH_LONG).show();
+                limpiarCajas();
                 break;
             }
 
@@ -172,6 +189,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 finish();
                 break;
             }
+            default:break;
         }
         return true;
     }
