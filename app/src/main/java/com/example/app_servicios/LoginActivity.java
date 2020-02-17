@@ -17,4 +17,8 @@ public class LoginActivity extends AppCompatActivity {
     public void Ingresar(View view) {
         startActivity(new Intent(this,MainActivity.class));
     }
+
+    public void registro(View view) {
+        startActivity(new Intent(this,RegisterActivity.class));
+    }
 }

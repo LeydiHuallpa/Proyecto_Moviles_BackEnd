@@ -4,6 +4,10 @@
         <item>Seleccione su Ubicacion</item>
         <item>Selecionar sitio en mapa</item>
     </string-array>
+    <string-array name="sexo">
+        <item>Femenino</item>
+        <item>Masculino</item>
+    </string-array>
     <string-array name="categoria">
         <item>Arquitecto (a) </item>
         <item>Contador (a) </item>
