@@ -10,6 +10,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +36,10 @@ import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
+//LLAMANDO LATITUD LONGITUD DE OTRA ACTIVIDAD
+    Bundle datos;
+    Double datolatitud;
+    Double datolongitud;
 
     private List<Servicio> listServicio = new ArrayList<Servicio>();
     ArrayAdapter<Servicio> arrayAdapterServicio;
@@ -137,6 +141,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()){
             case R.id.icon_add:{
+                //Llamando los datoss
+                datos=getIntent().getExtras();
+                if (datos != null){
+                    datolatitud = datos.getDouble("latitud");
+                    datolongitud = datos.getDouble("longitud");
+                    Log.e("verdatos","latitud:"+datolatitud.toString()+"longitud"+datolongitud.toString());
+                 //   prueba.setText("latitud:"+datolatitud.toString()+"longitud"+datolongitud.toString());
+
+                }else {
+                    Log.e("verdatos1","NO HAY DATOS");
+                }
+                //fin de llamado
 
                 if (servicio_nombre.equals("")||servicio_descripcion.equals("")||servicio_precio.equals("")||servicio_categoria.equals("")){
                     validacion();
@@ -261,5 +277,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(this,SeleccionUbicacion.class));
     }
 
+    public void guardar(View view) {
+        startActivity(new Intent(this,SeleccionUbicacion.class));
+    }
 }
 

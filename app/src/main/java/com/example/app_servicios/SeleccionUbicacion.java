@@ -22,7 +22,7 @@ import com.google.android.gms.maps.model.LatLng;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SeleccionUbicacion extends AppCompatActivity implements OnMapReadyCallback {
+public class SeleccionUbicacion extends AppCompatActivity implements OnMapReadyCallback  {
     final private int request_code_ask_permission=111;
     LatLng pos;
     GoogleMap mapa;
@@ -30,30 +30,38 @@ public class SeleccionUbicacion extends AppCompatActivity implements OnMapReadyC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seleccion_ubicacion);
+        SolicitarPermiso();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.mapa);
         mapFragment.getMapAsync(this);
+    }
+    private void SolicitarPermiso() {
+        int permisoLocation = ActivityCompat.checkSelfPermission(SeleccionUbicacion.this, Manifest.permission.ACCESS_FINE_LOCATION);
+        if(permisoLocation != PackageManager.PERMISSION_GRANTED){
+            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_code_ask_permission);
+            }
+        }else {
+
+        }
+
     }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mapa = googleMap;
         pos = new LatLng(-18.011737, -70.253529);
         mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(pos,17));
-        int permisoLocation = ActivityCompat.checkSelfPermission(SeleccionUbicacion.this, Manifest.permission.ACCESS_FINE_LOCATION);
-        if(permisoLocation != PackageManager.PERMISSION_GRANTED){
-            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_code_ask_permission);
-            }
-        }
-        else {
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
             mapa.setMyLocationEnabled(true);
             mapa.getUiSettings().setZoomControlsEnabled(false);
             mapa.getUiSettings().setCompassEnabled(true);
-
         }
 
+
     }
+
     Double Latitud, Longitud;
-    public void pedir(View view) {
+
+    public void guardar(View view) {
         if (mapa.getMyLocation() != null) {
             Latitud = mapa.getMyLocation().getLatitude();
             Longitud = mapa.getMyLocation().getLongitude();
@@ -69,12 +77,5 @@ public class SeleccionUbicacion extends AppCompatActivity implements OnMapReadyC
         startActivity(intent);
     }
 
-    private void SolicitarPermiso() {
-        int permisoLocation = ActivityCompat.checkSelfPermission(SeleccionUbicacion.this, Manifest.permission.ACCESS_FINE_LOCATION);
-        if(permisoLocation != PackageManager.PERMISSION_GRANTED){
-            if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.M){
-                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},request_code_ask_permission);
-            }
-        }
-    }
+
 }

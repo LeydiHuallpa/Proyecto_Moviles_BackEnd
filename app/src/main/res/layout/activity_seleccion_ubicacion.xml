@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical">
-    <fragment
+  <fragment
         android:id="@+id/mapa"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -16,6 +16,6 @@
         android:layout_height="0dp"
         android:layout_weight="10"
         android:text="Guardar ubicación"
-        android:onClick="pedir"
+        android:onClick="guardar"
         />
 </LinearLayout>
