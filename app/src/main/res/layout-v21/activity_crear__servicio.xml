@@ -114,6 +114,7 @@
             android:layout_toRightOf="@id/t_categoria" />
 
         <Button
+            android:id="@+id/btncrear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/t_categoria"
@@ -127,5 +128,19 @@
             android:textSize="25sp"
             android:background="@color/Amarillo"
             android:text="CREAR SERVICIO" />
+
+        <TextView
+
+            android:id="@+id/tvprueba"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_below="@id/btncrear"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="110dp"
+            >
+
+
+        </TextView>
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
