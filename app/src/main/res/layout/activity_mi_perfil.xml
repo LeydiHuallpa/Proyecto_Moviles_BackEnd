@@ -20,7 +20,6 @@
         android:layout_gravity="center_horizontal"
         android:text="MI PERFIL" />
 
-
     <ImageView
         android:layout_width="195dp"
         android:layout_height="135dp"
@@ -29,6 +28,7 @@
         android:layout_marginBottom="50dp"
         android:src="@drawable/logo_s_f" />
     <TextView
+        android:id="@+id/textViewNombre"
         android:layout_width="wrap_content"
         android:textSize="20sp"
         android:layout_margin="10dp"
@@ -39,6 +39,7 @@
         android:text="nombre" />
 
     <TextView
+        android:id="@+id/textViewEmail"
         android:layout_width="wrap_content"
         android:textSize="20sp"
         android:layout_margin="10dp"
@@ -47,7 +48,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="email" />
-
 
     <Button
         android:id="@+id/btnSignout"
