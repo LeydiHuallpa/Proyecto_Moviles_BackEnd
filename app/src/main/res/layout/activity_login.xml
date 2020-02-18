@@ -26,40 +26,41 @@
             android:layout_marginBottom="50dp"
             />
         <EditText
+            android:id="@+id/et_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_Usuario"
-            android:hint="Usuario"
-            android:inputType="text"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="15dp"
-            android:textColor="#fff"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
             android:background="@drawable/input"
+            android:hint="Correo Electronico"
+            android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:paddingTop="10dp"
+            android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textColorHint="#ccc"/>
+            android:textColor="#fff"
+            android:textColorHint="#ccc" />
+
         <EditText
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_password"
-            android:hint="Contraseña"
-            android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/input"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
             android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:paddingTop="10dp"
+            android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textColorHint="#ccc"
             android:textColor="#fff"
-            android:inputType="textPassword"/>
+            android:textColorHint="#ccc" />
 
         <Button
-            android:id="@+id/btn_iniciar_sesion"
+            android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
@@ -70,7 +71,6 @@
             android:textColor="#fff"
             android:textSize="16sp"
             android:elevation="5dp"
-            android:onClick="Inicia"
             />
         <LinearLayout
             android:layout_width="match_parent"
