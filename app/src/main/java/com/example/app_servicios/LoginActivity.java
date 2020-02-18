@@ -8,18 +8,23 @@ import android.view.View;
 
 public class LoginActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
     }
 
-    public void Ingresar(View view) {
-        startActivity(new Intent(this,MainActivity.class));
-    }
 
     public void registro(View view) {
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this,MiRegistro.class));
+
+    }
+
+    public void Inicia(View view) {
+        startActivity(new Intent(this,MainActivity.class));
+
     }
 }
 

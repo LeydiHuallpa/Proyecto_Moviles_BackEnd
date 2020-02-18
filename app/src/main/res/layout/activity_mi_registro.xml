@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".MiRegistro">
 
     <ImageView
         android:layout_width="match_parent"
@@ -14,91 +14,109 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="vertical"
+        android:layout_height="match_parent"
         android:background="#d8000000"
         android:gravity="center"
-        android:layout_height="match_parent">
+        android:orientation="vertical">
 
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:src="@drawable/logo_nombre"
             android:layout_marginBottom="50dp"
-            />
+            android:src="@drawable/logo_nombre" />
+
         <EditText
+            android:id="@+id/et_Usuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_Usuario"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/input"
             android:hint="Usuario"
             android:inputType="text"
-            android:layout_marginBottom="15dp"
-            android:textColor="#fff"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:background="@drawable/input"
             android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:paddingTop="10dp"
+            android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textColorHint="#ccc"/>
+            android:textColor="#fff"
+            android:textColorHint="#ccc" />
+
         <EditText
+            android:id="@+id/et_correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/et_password"
-            android:hint="Contraseña"
-            android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/input"
+            android:hint="Correo Electronico"
+            android:inputType="textEmailAddress"
             android:paddingLeft="20dp"
-            android:paddingRight="10dp"
             android:paddingTop="10dp"
+            android:paddingRight="10dp"
             android:paddingBottom="10dp"
-            android:textColorHint="#ccc"
             android:textColor="#fff"
-            android:inputType="textPassword"/>
+            android:textColorHint="#ccc" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/input"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc" />
 
         <Button
-            android:id="@+id/btn_iniciar_sesion"
+            android:id="@+id/btn_ir_crearCuenta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/button_rounded"
-            android:text="Inciar sesión"
-            android:textColor="#fff"
-            android:textSize="16sp"
+            android:layout_marginBottom="30dp"
+            android:background="@color/color7"
             android:elevation="5dp"
-            android:onClick="Inicia"
-            />
+            android:text="CREAR CUENTA"
+            android:textColor="#000"
+            android:textSize="18sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:gravity="center"
-            android:layout_height="wrap_content">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="¿Aún no estas registrado?"
-                android:textSize="16sp"
+                android:text="¿Ya tienes cuenta?"
                 android:textColor="#fff"
-                />
+                android:textSize="16sp" />
+
             <Button
-                android:id="@+id/btn_registro"
+                android:id="@+id/btn_ir_inicioSesion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGISTRATE AQUI"
-                android:background="@android:color/transparent"
                 android:layout_marginLeft="10dp"
-                android:onClick="registro"
-                android:textColor="#fff"/>
+                android:background="@android:color/transparent"
+                android:text="Iniciar Sesión"
+                android:onClick="iniciar"
+                android:textColor="#fff" />
 
         </LinearLayout>
 
     </LinearLayout>
 
 </RelativeLayout>
+
