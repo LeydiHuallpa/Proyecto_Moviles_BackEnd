@@ -256,6 +256,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(new Intent(this,MiPerfilActivity.class));
                 break;
 
+            case R.id.AcercaDe:
+                startActivity(new Intent(this,AcercaDe.class));
+                break;
+
             case R.id.MisServicios:
                 startActivity(new Intent(this,MisServicios.class));
                 break;
