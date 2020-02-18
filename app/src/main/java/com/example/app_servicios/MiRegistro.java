@@ -123,5 +123,14 @@ public class MiRegistro extends AppCompatActivity {
         startActivity(new Intent(this,LoginActivity.class));
 
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if(mAuth.getCurrentUser() !=null){
+            startActivity(new Intent(MiRegistro.this, MainActivity.class));
+            finish();
+        }
+    }
 }
 
