@@ -26,6 +26,8 @@ public class MiRegistro extends AppCompatActivity {
     private EditText miEditTextEmail;
     private EditText miEditTextPassword;
     private Button miButtonRegister;
+    private Button miButtonSendToLogin;
+
     //variables de los datos a registrar
     private String nombre ="";
     private String email ="";
@@ -46,6 +48,7 @@ public class MiRegistro extends AppCompatActivity {
         miEditTextEmail = (EditText) findViewById(R.id.et_correo);
         miEditTextPassword = (EditText) findViewById(R.id.et_password);
         miButtonRegister = (Button) findViewById(R.id.btn_ir_crearCuenta);
+        miButtonSendToLogin = (Button) findViewById(R.id.btnSendToLogin);
 
         miButtonRegister.setOnClickListener(new View.OnClickListener(){
 
@@ -61,12 +64,19 @@ public class MiRegistro extends AppCompatActivity {
                     }
                     else{
                         Toast.makeText(MiRegistro.this, "La contraseña debe tener al menos 6 caracteres", Toast.LENGTH_SHORT).show();
-
                     }
                 }
                 else {
                     Toast.makeText(MiRegistro.this, "Debe completar los campos", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        miButtonSendToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MiRegistro.this, LoginActivity.class));
+                //finish();
             }
         });
 
