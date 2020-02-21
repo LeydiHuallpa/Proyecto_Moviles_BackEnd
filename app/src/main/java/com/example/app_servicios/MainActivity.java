@@ -2,11 +2,13 @@ package com.example.app_servicios;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -234,9 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (servicio_categoria.equals("")){
             serv_prec.setError("Este campo es requerido");
         }
-
     }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -257,7 +257,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.AcercaDe:
-                startActivity(new Intent(this,AcercaDe.class));
+               // startActivity(new Intent(this,AcercaDe.class));
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage("EASY SERVICE-Version 1.0 es una aplicacion de servicios ofrecidos. Publica gratis tu servicio y gana dinero extra...")
+                        .setTitle("EASY SERVICE")
+                        .setCancelable(false)
+                        .setNeutralButton("Aceptar",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        dialog.cancel();
+                                    }
+                                });
+                AlertDialog alert = builder.create();
+                alert.show();
                 break;
 
             case R.id.MisServicios:
@@ -285,4 +297,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         startActivity(new Intent(this,SeleccionUbicacion.class));
     }
 }
+
 
