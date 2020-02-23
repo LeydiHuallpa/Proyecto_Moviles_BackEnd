@@ -1,8 +1,5 @@
 package com.example.app_servicios.Login;
 
-import com.example.app_servicios.Login.LoginInterface;
-import com.example.app_servicios.LoginActivity;
-
 public class LoginPresenter implements LoginInterface.Presenter, LoginInterface.TaskListener {
 
     private LoginInterface.View view;

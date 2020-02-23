@@ -28,14 +28,11 @@ public class LoginActivity extends AppCompatActivity implements LoginInterface.V
     private String email ="";
     private String password ="";
 
-    //DatabaseReference mDatabase;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         setViews();
-       // mDatabase= FirebaseDatabase.getInstance().getReference();
 
         miButtonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
