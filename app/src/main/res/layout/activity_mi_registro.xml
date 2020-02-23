@@ -76,6 +76,23 @@
             android:textColor="#fff"
             android:textColorHint="#ccc" />
 
+        <EditText
+            android:id="@+id/et2_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/input"
+            android:hint="Repita Contraseña"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textColor="#fff"
+            android:textColorHint="#ccc" />
+
         <Button
             android:id="@+id/btn_ir_crearCuenta"
             android:layout_width="match_parent"

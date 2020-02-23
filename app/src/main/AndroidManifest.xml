@@ -18,7 +18,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".AcercaDe"></activity>
-        <activity android:name=".MiRegistro" />
+        <activity android:name=".MiRegistro"
+            android:parentActivityName=".LoginActivity"/>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".LoginActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
