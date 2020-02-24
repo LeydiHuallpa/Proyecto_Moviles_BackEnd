@@ -8,11 +8,15 @@
         <item>Femenino</item>
         <item>Masculino</item>
     </string-array>
+    <string-array name="estado">
+        <item>Escoge tu estado</item>
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
     <string-array name="categoria">
-        <item>Arquitecto (a) </item>
-        <item>Contador (a) </item>
-        <item>Ingerniero(a) de Sistemas </item>
-        <item>Ingerniero(a) Civil </item>
+        <item>Escoge una categoria</item>
+        <item>Profesional</item>
+        <item>Oficio</item>
     </string-array>
 
 </resources>

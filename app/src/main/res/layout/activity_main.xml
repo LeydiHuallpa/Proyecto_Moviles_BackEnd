@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fillViewport="true">
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
     android:layout_width="match_parent"
     android:background="@drawable/fondo7"
     android:orientation="vertical"
@@ -22,10 +22,10 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:layout_width="217dp"
-        android:layout_height="149dp"
+        android:layout_width="114dp"
+        android:layout_height="84dp"
+        android:layout_marginLeft="135dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="90dp"
         android:maxWidth="150dp"
         android:maxHeight="150dp"
         android:src="@drawable/logo_s_f"></ImageView>
@@ -33,13 +33,13 @@
     <TextView
         android:id="@+id/t_titulo"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="3dp"
         android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:textStyle="bold"
+        android:text="CREAR SERVICIO"
         android:textColor="@color/primary_text"
-        android:textSize="25sp"
-        android:text="CREAR SERVICIO" />
+        android:textSize="18sp"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/t_nombre"
         android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
         android:text="Titulo del servicio:"
         android:textColor="@color/primary_text"
         android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="1dp"
         android:textAppearance="?android:attr/textAppearanceMedium" />
     <EditText
         android:id="@+id/nombre"
@@ -93,15 +93,36 @@
         <requestFocus/>
     </EditText>
 
+    <TextView
+        android:id="@+id/t_latidud_longitud"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnubicacion"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="Latitud y Longitud:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <Button
         android:id="@+id/btnubicacion"
         android:layout_width="match_parent"
         android:layout_height="36dp"
-        android:layout_below="@id/precio"
-        android:text="Seleccionar Ubicación"
-        android:textStyle="bold"
+        android:layout_below="@id/t_latidud_longitud"
         android:background="@drawable/fondo5"
-        android:onClick="IrAlMapa"/>
+        android:onClick="IrAlMapa"
+        android:text="Seleccionar Ubicación"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/lat_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/t_latidud_longitud"
+        android:layout_toRightOf="@id/t_latidud_longitud"
+        android:layout_below="@id/t_latidud_longitud"
+        android:textSize="18sp"
+        android:text="prueba"
+        android:textColor="@color/primary_text" />
 
     <TextView
         android:id="@+id/t_categoria"
@@ -112,29 +133,43 @@
         android:textStyle="bold"
         android:text="Categoria:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
-    <EditText
+    <Spinner
         android:id="@+id/categoria"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/t_categoria"
-        android:hint="Escriba la Categoria" >
-        <requestFocus/>
-    </EditText>
+        android:entries="@array/categoria"
+        android:layout_below="@id/t_categoria"/>
+
+    <TextView
+        android:id="@+id/t_estado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/categoria"
+        android:textColor="@color/primary_text"
+        android:textStyle="bold"
+        android:text="Estado:"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <Spinner
+        android:id="@+id/estado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/estado"
+        android:layout_below="@id/t_estado"/>
 
     <TextView
         android:layout_width="wrap_content"
-        android:textSize="25sp"
-        android:layout_margin="10dp"
-        android:textStyle="bold"
-        android:textColor="@color/Negro"
-        android:layout_height="wrap_content"
+        android:layout_height="28dp"
         android:layout_gravity="center_horizontal"
-        android:text="Lista de tus Servicios" />
+        android:layout_margin="8dp"
+        android:text="Lista de tus Servicios"
+        android:textColor="@color/Negro"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/listV_servicios"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="79dp" />
 
 </LinearLayout>
 </ScrollView>

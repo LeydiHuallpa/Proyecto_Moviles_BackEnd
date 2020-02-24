@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private List<Servicio> listServicio = new ArrayList<Servicio>();
     ArrayAdapter<Servicio> arrayAdapterServicio;
 
-    EditText serv_nomb, serv_descrip,serv_prec,serv_cat;
+    EditText serv_nomb, serv_descrip,serv_prec;
     ListView listV_servicios;
+    TextView lat_long;
+    Spinner serv_cat, serv_estado;
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
@@ -76,8 +78,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         serv_nomb = findViewById(R.id.nombre);
         serv_descrip = findViewById(R.id.descripcion);
         serv_prec = findViewById(R.id.precio);
-        serv_cat = findViewById(R.id.categoria);
-        //serv_cat = (Spinner) findViewById(R.id.categoria);
+        serv_cat = (Spinner) findViewById(R.id.categoria);
+        serv_estado = (Spinner) findViewById(R.id.estado);
+        lat_long=(TextView) findViewById(R.id.lat_long);
+
         listV_servicios = findViewById(R.id.listV_servicios);
 
         inicializarFirebase();
@@ -90,11 +94,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 serv_nomb.setText(servicioSelected.getServicio_nombre());
                 serv_descrip.setText(servicioSelected.getServicio_descripcion());
                 serv_prec.setText(servicioSelected.getServicio_precio());
-                serv_cat.setText(servicioSelected.getServicio_categoria());
+
 
             }
 
         });
+
+
 
     }
 
@@ -123,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FirebaseApp.initializeApp(this);
         firebaseDatabase = FirebaseDatabase.getInstance();
         //firebaseDatabase.setPersistenceEnabled(true);// agrega de manera local sin internet
-        databaseReference = firebaseDatabase.getReference();
+        databaseReference = firebaseDatabase.getReference("Servicio");
     }
 
     @Override
@@ -139,7 +145,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String servicio_nombre = serv_nomb.getText().toString();
         String servicio_descripcion = serv_descrip.getText().toString();
         String servicio_precio = serv_prec.getText().toString();
-        String servicio_categoria = serv_cat.getText().toString();
+        String servicio_categoria = serv_cat.getSelectedItem().toString();
+        String servicio_estado = serv_estado.getSelectedItem().toString();
+
 
         switch (item.getItemId()){
             case R.id.icon_add:{
@@ -149,7 +157,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     datolatitud = datos.getDouble("latitud");
                     datolongitud = datos.getDouble("longitud");
                     Log.e("verdatos","latitud:"+datolatitud.toString()+"longitud"+datolongitud.toString());
-                 //   prueba.setText("latitud:"+datolatitud.toString()+"longitud"+datolongitud.toString());
+                    lat_long.setText("latitud:"+datolatitud.toString()+"\n"+"longitud"+datolongitud.toString());
 
                 }else {
                     Log.e("verdatos1","NO HAY DATOS");
@@ -167,6 +175,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     p.setServicio_descripcion(servicio_descripcion);
                     p.setServicio_precio(servicio_precio);
                     p.setServicio_categoria(servicio_categoria);
+                    p.setServicio_estado(servicio_estado);
                     databaseReference.child("Servicio").child(p.getServicio_id()).setValue(p);
                     Toast.makeText(this, "Registro Agregado", Toast.LENGTH_LONG).show();
                     limpiarCajas();
@@ -175,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             case R.id.icon_save:{
-                if (servicio_nombre.equals("")||servicio_descripcion.equals("")||servicio_precio.equals("")||servicio_categoria.equals("")){
+                if (servicio_nombre.equals("")||servicio_descripcion.equals("")||servicio_precio.equals("")||servicio_categoria.equals("")||servicio_estado.equals("")){
                     validacion();
 
                 }
@@ -186,6 +195,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     p.setServicio_descripcion(servicio_descripcion);
                     p.setServicio_precio(servicio_precio);
                     p.setServicio_categoria(servicio_categoria);
+                    p.setServicio_estado(servicio_estado);
                     databaseReference.child("Servicio").child(p.getServicio_id()).setValue(p);
                     Toast.makeText(this, "Registro Actualizado", Toast.LENGTH_LONG).show();
                     limpiarCajas();
@@ -216,14 +226,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         serv_nomb.setText("");
         serv_descrip.setText("");
         serv_prec.setText("");
-        serv_cat.setText("");
     }
 
     private void validacion() {
         String servicio_nombre = serv_nomb.getText().toString();
         String servicio_descripcion = serv_descrip.getText().toString();
         String servicio_precio = serv_prec.getText().toString();
-        String servicio_categoria = serv_cat.getText().toString();
+        String servicio_categoria = serv_cat.getSelectedItem().toString();
+        String servicio_estado = serv_estado.getSelectedItem().toString();
         if (servicio_nombre.equals("")){
             serv_nomb.setError("Este campo es requerido");
         }
